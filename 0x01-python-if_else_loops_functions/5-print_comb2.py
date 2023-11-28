@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 for i in range(0, 100):
     if i < 99:
-        print("{i:02d},".format(), end=' ')
+        print(f"{i:02d},".format(), end=' ')
     else:
-        print("{i:02d}".format(), end=' ')
+        print(f"{i:02d}".format(), end=' ')
     i += 1
