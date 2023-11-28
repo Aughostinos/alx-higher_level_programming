@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 for i in range(0, 100):
     if i < 10:
-        print(f"0{i},", end=' ')
+        print(f"0{i},".format(), end=' ')
     else:
-        print(f"{i},", end=' ')
+        print(f"{i},".format(), end=' ')
     i += 1
