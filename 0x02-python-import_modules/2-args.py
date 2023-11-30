@@ -7,7 +7,8 @@ if __name__ == "__main__":
     if arg_number - 1 == 0:
         print("0 argument.")
     elif arg_number - 1 == 1:
-        print(f"1 argument:\n1: {sys.argv[1]}".format())
+        print(f"1 argument:".format())
+        print(f"1: {sys.argv[1]}".format())
     else:
         print(f"{arg_number - 1} arguments:".format())
         for i, arg in enumerate(sys.argv[1:], start=1):
