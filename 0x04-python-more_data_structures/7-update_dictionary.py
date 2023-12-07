@@ -5,4 +5,4 @@ def update_dictionary(a_dictionary, key, value):
         a_dictionary[key] = value
     else:
         a_dictionary[key] = value
-    print(a_dictionary)
+    return a_dictionary
