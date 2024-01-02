@@ -1,11 +1,4 @@
 #!/usr/bin/python3
-"""
-4-square.py: This is a module that defines the square class
-
-Classes:
-Square
-    defines a square with its size.
-"""
 
 
 class Square:
