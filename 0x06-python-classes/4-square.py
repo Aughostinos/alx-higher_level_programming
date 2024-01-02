@@ -20,14 +20,14 @@ class Square:
         """
         the constructor of the square class
         """
-        self._size = size
+        self.size = size
 
     @property
     def size(self):
         """
         property method to get the size
         """
-        return self._size
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -38,7 +38,7 @@ class Square:
             rise TypeError("size must be an integer")
         if value < 0:
             rise ValueError("size must be >= 0")
-        self._size = value
+        self.__size = value
 
     def area(self):
         """
