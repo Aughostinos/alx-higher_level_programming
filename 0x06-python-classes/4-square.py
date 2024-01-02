@@ -12,17 +12,29 @@ class Square:
     Attributes:
     __size: size of the square.
     """
+    def __init__(self, size=0):
+        """
+        the constructor of the square class
+        """
+        self._size = size
+
     @property
     def size(self):
-        return self.size
+        """
+        property method to get the size
+        """
+        return self._size
 
     @size.setter
     def size(self, value):
+        """
+        property method to set the size
+        """
         if not isinstance(value, int):
             rise TypeError("size must be an integer")
         if value < 0:
             rise ValueError("size must be >= 0")
-        self.__size = size
+        self._size = value
 
     def area(self):
         """
