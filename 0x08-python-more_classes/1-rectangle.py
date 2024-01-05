@@ -14,7 +14,7 @@ class Rectangle:
     def width(self):
         """ This is width property"""
         return self.width
-    
+
     @width_setter
     def width(self, value):
         """this is the width setter"""
@@ -22,7 +22,7 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.width = value    
+        self.width = value
 
     @property
     def height(self):
