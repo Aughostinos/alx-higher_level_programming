@@ -15,7 +15,7 @@ class Rectangle:
         """ This is width property"""
         return self.width
 
-    @width_setter
+    @width.setter
     def width(self, value):
         """this is the width setter"""
         if not isinstance(value, int):
@@ -29,7 +29,7 @@ class Rectangle:
         """ This is jeight property"""
         return self.height
 
-    @height_setter
+    @height.setter
     def height(self, value):
         """this is the height setter"""
         if not isinstance(value, int):
