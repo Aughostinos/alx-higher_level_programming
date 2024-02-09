@@ -35,5 +35,5 @@ test float NaN:
 	ValueError: cannot convert float NaN to integer
 
 test float overflow:
-	>>> add_integer(1.7976 + 8)
-	9
+	>>> add_integer(1.7976)
+	99
