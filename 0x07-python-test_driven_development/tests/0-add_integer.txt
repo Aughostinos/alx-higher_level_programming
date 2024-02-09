@@ -1,0 +1,22 @@
+import unittest
+from 0-add_integer import add_integer
+
+class TestAddInteger(unittest.TestCase):
+def test_add(self):
+#test add when a and b are of type int
+self.assertAlmostEqual(add_integer(1, 15), 16)
+self.assertAlmostEqual(add_integer(0, 15), 15)
+
+def test_float(self):
+#make sure that float is casted to integer
+self.assertEqual(add_integer(1, 2.5), 3)
+
+def test_type(self):
+#make sure that errors are raised when the type in not int
+self.assertRaises(TypeError, add_integer("15", 2))
+self.assertRaises(TypeError, add_integer(3j, 5))
+self.assertRaises(TypeError, add_integer(None,5))
+
+if __name__ == '__main__':
+unittest.main()
+
