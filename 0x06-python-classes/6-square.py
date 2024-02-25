@@ -5,19 +5,9 @@ This is a module that defines the square class
 
 
 class Square:
-    """
-    This is a class that defines a square with its size.
-
-    Attributes:
-    _size: size of the square.
-    """
     def __init__(self, size=0, position=(0, 0)):
-        """
-        Args:
-        size: private attribute
-        """
-        self.size = size
-        self.position = position
+        self.size = size  # This will call the size setter
+        self.position = position  # This will call the position setter
 
     @property
     def size(self):
@@ -37,28 +27,21 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if not isinstance(value, tuple),
-        or len(value) != 2,
-        or not all(isinstance(num, int) and num >= 0 for num in value):
-            raise TypeError("position must be  a tuple of 2 positive integers")
+        if not isinstance(value, tuple) or len(value) != 2 or \
+                not all(isinstance(num, int) and num >= 0 for num in value):
+            raise TypeError("position must be a tuple of 2 positive integers")
         self._position = value
 
     def area(self):
-        """
-        public instance method that returns the area of the square
-        """
         return self._size ** 2
 
     def my_print(self):
-        """
-        public instance method that prints the square
-        """
         if self._size == 0:
-            print("")
+            print()
             return
 
         print("\n" * self._position[1], end="")
 
         for i in range(self._size):
             print(" " * self._position[0], end="")
-            print('#' * self._size)
+            print("#" * self._size)
