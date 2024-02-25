@@ -43,4 +43,7 @@ class Square:
         public instance method that print the square
         """
         for i in range(self._size):
-            print('#'*self._size)
+            if (i != 0):
+                print('#'*self._size)
+            else:
+                continue
