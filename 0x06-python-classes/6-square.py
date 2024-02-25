@@ -5,6 +5,8 @@ This is a module that defines the square class
 
 
 class Square:
+    """this is a square class
+    """
     def __init__(self, size=0, position=(0, 0)):
         self.size = size  # This will call the size setter
         self.position = position  # This will call the position setter
