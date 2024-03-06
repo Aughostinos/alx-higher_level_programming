@@ -1,0 +1,14 @@
+test print_sorted
+-----------------
+
+import print_sorted:
+	print_sorted = __import__('1-print_sorted').print_sorted
+
+test dafult case:
+	>>>my_list = MyList()
+	>>>my_list.append(1)
+	>>>my_list.append(4)
+	>>>my_list.append(2)
+	>>>my_list.append(3)
+	>>>my_list.append(5)
+	[1, 2, 3, 4, 5]
