@@ -2,7 +2,7 @@ test base_geometry
 ------------------
 
 impor base_geometry:
-	print_sorted = __import__('7-base_geometry').base_geometry
+	base_geometry = __import__('7-base_geometry').base_geometry
 
 test dafult case:
 	>>> bg = BaseGeometry()
