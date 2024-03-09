@@ -5,7 +5,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_initialization(self):
         """Test initialization of Rectangle"""
-        r = Rectangle(10, 18, 5, 5, 1)
+        r = Rectangle(10, 15, 5, 5, 1)
         self.assertEqual(r.width, 10)
         self.assertEqual(r.height, 15)
         self.assertEqual(r.x, 5)
@@ -60,5 +60,5 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             r.y = -5
 
-if name == 'main':
+if __name__ == '__main__':
     unittest.main()
