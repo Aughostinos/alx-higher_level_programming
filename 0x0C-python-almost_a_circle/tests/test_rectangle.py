@@ -61,4 +61,4 @@ class TestRectangle(unittest.TestCase):
             r.y = -5
 
 if name == 'main':
-unittest.main()
+    unittest.main()
