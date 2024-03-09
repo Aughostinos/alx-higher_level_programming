@@ -37,10 +37,10 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.y, 10)
 
     def test_negative_width(self):
-    """Test that setting a negative width raises an error."""
-    r = Rectangle(10, 20)
-    with self.assertRaises(ValueError):
-        r.width = -10
+        """Test that setting a negative width raises an error."""
+        r = Rectangle(10, 20)
+        with self.assertRaises(ValueError):
+            r.width = -10
 
     def test_neg_height(self):
         """Test that setting a negative height raises an error."""
