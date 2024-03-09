@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """ module documentation """
 
+from models.base import Base
+
 
 class Rectangle(Base):
     """ class Rectangle that inherits from Base """
