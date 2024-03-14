@@ -1,5 +1,7 @@
 #!/usr/bin/node
 
-const add = function (x, y) {
+function add (x, y) {
   return x + y;
-};
+}
+
+module.exports.add = add;
