@@ -42,11 +42,10 @@ class Rectangle(Base):
 
     def display(self):
         """that prints in stdout the Rectangle instance with the character #"""
+        print('\n' * self.__y, end="")
+
         for i in range(self.__height):
-            disp = ''
-            for j in range(self.__width):
-                disp += '#'
-            print(disp)
+            print(' ' * self.__x + "#" * self.__width)
 
     def __str__(self):
         return ('[Rectangle] ({}) {}/{} - {}/{}'
