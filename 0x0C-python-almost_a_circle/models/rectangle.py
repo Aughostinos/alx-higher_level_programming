@@ -40,6 +40,14 @@ class Rectangle(Base):
            value of the Rectangle instance"""
         return self.__height * self.__width
 
+    def display(self):
+        """that prints in stdout the Rectangle instance with the character #"""
+        for i in range(self.__height):
+            disp = ''
+            for j in range(self.__width):
+                disp += '#'
+            print(disp)
+
     @property
     def width(self):
         return self.__width
