@@ -36,7 +36,8 @@ class Rectangle(Base):
         self. __y = y
 
     def area(self):
-    """public method that returns the area value of the Rectangle instance"""
+        """public method that returns the area
+           value of the Rectangle instance"""
         return self.__height * self.__width
 
     @property
