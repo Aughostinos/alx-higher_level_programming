@@ -55,17 +55,23 @@ class Rectangle(Base):
                         self.__width,
                         self.__height))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Assigns an argument to each attribute, in order."""
-        attr_order = ['id',
-                      '_Rectangle__width',
-                      '_Rectangle__height',
-                      '_Rectangle__x',
-                      '_Rectangle__y']
+        if len(args) > 0:
+            attr_order = ['id',
+                          '_Rectangle__width',
+                          '_Rectangle__height',
+                          '_Rectangle__x',
+                          '_Rectangle__y']
 
         for i, arg in enumerate(args):
             if i < len(attr_order):
                 setattr(self, attr_order[i], arg)
+
+        else:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
 
     @property
     def width(self):
