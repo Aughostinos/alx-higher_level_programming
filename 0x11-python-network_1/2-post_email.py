@@ -20,5 +20,4 @@ if __name__ == "__main__":
         body = response.read()
         decode_body = body.decode('utf-8')
     
-    print('Your email is: {}'.format(values['email']))
     print(decode_body)
