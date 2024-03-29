@@ -4,7 +4,7 @@
    the header of the response."""
 
 
-import requests 
+import requests
 import sys
 
 
