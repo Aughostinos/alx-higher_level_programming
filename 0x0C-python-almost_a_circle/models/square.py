@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ module documentation """
 
-
 from models.rectangle import Rectangle
 
 
@@ -14,6 +13,7 @@ class Square(Rectangle):
     super().__init__(id, x, y, width=size, height=size)
 
     def __str__(self):
+        """Return the string representation of the Square."""
         return ('[Square] ({}) {}/{} - {}/{}'
                 .format(self.id,
                         self.x,
