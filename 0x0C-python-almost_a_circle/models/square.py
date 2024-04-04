@@ -28,6 +28,16 @@ class Square(Rectangle):
                 if hasattr(self, key):
                     setattr(self, key, value)
 
+
+    def to_dictionary(self):
+        """return a dictionary of square"""
+        return {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y
+        }
+
         def __str__(self):
             """Return the string representation of the Square."""
             return ('[Square] ({}) {}/{} - {}'
