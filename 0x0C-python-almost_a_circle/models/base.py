@@ -38,8 +38,9 @@ class Base:
             # converting to json
             json_objs_list = [obj.to_dictionary() for obj in list_objs]
             json_string = cls.to_json_string(json_objs_list)
-            # write to the file
-            file_name = '{}.json'.format(cls.__name__)
 
-            with open(file_name, 'w') as file:
-                file.write(json_string)
+        # write to the file
+        file_name = '{}.json'.format(cls.__name__)
+
+        with open(file_name, 'w') as file:
+            file.write(json_string)
