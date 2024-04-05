@@ -44,3 +44,12 @@ class Base:
 
         with open(file_name, 'w') as file:
             file.write(json_string)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON string representation"""
+        if json_string is None or len(json_string) == 0:
+            return []
+        else:
+            py_object = json.loads(json_string)
+            return py_object
