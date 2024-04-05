@@ -53,3 +53,10 @@ class Base:
         else:
             py_object = json.loads(json_string)
             return py_object
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+        dummy_instance = cls(1,1)
+        dummy_instance.update(**dictionary)
+        return dummy_instance
