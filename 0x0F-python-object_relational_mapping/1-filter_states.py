@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""This script lists all states from the database"""
-
+"""
+this script list all states that strart with N
+"""
 
 import MySQLdb
 import sys
