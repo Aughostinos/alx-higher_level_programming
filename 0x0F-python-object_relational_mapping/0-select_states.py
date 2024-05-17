@@ -17,13 +17,14 @@ if __name__ == "__main__":
         db=database_name,
         port=3306
     )
-    
+
     cursor = db.cursor()
- 
+
     cursor.execute("SELECT id, name FROM states ORDER BY id ASC")
+
     states = cursor.fetchall()
-        for state in states:
-            print(state)
+    for state in states:
+        print(state)
 
     cursor.close()
     db.close()
