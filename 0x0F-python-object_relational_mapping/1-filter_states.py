@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""
-this script list all states that strart with N
-"""
+
+"""module documentation"""
 
 import MySQLdb
 import sys
@@ -22,8 +21,8 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    cursor.execute("SELECT id, 
-            name FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cursor.execute("SELECT id,
+                   name FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
     states = cursor.fetchall()
     for state in states:
