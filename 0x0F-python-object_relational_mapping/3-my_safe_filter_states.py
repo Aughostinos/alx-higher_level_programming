@@ -24,7 +24,7 @@ if __name__ == "__main__":
     query = """SELECT id, name FROM states WHERE BINARY name = %s
              ORDER BY id ASC"""
 
-    cursor.execute(query, (state_name_searched))
+    cursor.execute(query, (state_name_searched,))
 
     states = cursor.fetchall()
     for state in states:
