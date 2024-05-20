@@ -9,6 +9,7 @@ if __name__ == "__main__":
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
+    state_name = sys.argv[4]
 
     db = MySQLdb.connect(
         host="localhost",
@@ -23,7 +24,7 @@ if __name__ == "__main__":
     cursor.execute("""SELECT cities.name
                       FROM cities
                       JOIN states ON cities.state_id = states.id
-                      WHERE states.name =%s
+                      WHERE states.name = %s
                       ORDER BY cities.id ASC""")
 
     cities = cursor.fetchall()
