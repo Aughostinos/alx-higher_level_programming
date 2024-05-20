@@ -28,8 +28,8 @@ if __name__ == "__main__":
 
     cities = cursor.fetchall()
     
-    requested_cities = [city[0] for city in cities:
-        print(", ".join(requested_cities)
+    requested_cities = [city[0] for city in cities]
+    print(", ".join(requested_cities)
 
     cursor.close()
     db.close()
