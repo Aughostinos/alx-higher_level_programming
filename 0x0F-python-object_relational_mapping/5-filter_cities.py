@@ -28,7 +28,7 @@ if __name__ == "__main__":
                       ORDER BY cities.id ASC""", (state_name,))
 
     cities = cursor.fetchall()
-    
+
     requested_cities = [city[0] for city in cities]
     print(", ".join(requested_cities))
 
