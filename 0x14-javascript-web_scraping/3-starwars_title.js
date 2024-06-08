@@ -4,10 +4,11 @@
  */
 
 const request = require('request');
-const movie_id = process.argv[2];
-const api_url = 'https://swapi-api.alx-tools.com/api/films/${movie_id}';
+const movieId = process.argv[2];
+const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
-request.get(api_url, (error, response, body) => {
+
+request.get(apiUrl, (error, response, body) => {
   if (error) {
     console.error(error);
   } else if (response.statusCode === 200) {
