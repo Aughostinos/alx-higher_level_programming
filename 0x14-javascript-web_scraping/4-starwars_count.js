@@ -5,6 +5,7 @@
 
 const request = require('request');
 const apiUrl = process.argv[2];
+const characterUrl = '18';
 
 request(apiUrl, (error, response, body) => {
   if (error) {
@@ -22,7 +23,7 @@ request(apiUrl, (error, response, body) => {
   let count = 0;
 
   films.forEach(film => {
-    if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${wedgeAntillesId}/`)) {
+    if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterUrl}/`)) {
       count++;
     }
   });
