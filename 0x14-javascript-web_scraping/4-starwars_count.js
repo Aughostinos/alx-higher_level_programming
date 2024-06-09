@@ -20,7 +20,7 @@ request.get(apiUrl, (error, response, body) => {
       return;
     }
     const count = films.reduce((acc, film) => {
-      if (film.characters.includes(characterUrl)) {
+      if (film.characters.includes(film.characterUrl)) {
         acc++;
       }
       return acc;
