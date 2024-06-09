@@ -20,5 +20,7 @@ request.get(apiUrl, (error, response, body) => {
       return acc;
     }, 0);
     console.log(count);
+  } else {
+    console.log(`Error: ${response.statusCode}`);
   }
 });
