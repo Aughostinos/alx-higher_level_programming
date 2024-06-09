@@ -14,13 +14,13 @@ request.get(apiUrl, (error, response, body) => {
   } else if (response.statusCode === 200) {
     let films;
     try {
-      JSON.parse(body).results;
+      films = JSON.parse(body).results;
     } catch (parseError) {
       console.error('parsing Error:', parseError);
       return;
     }
     const count = films.reduce((acc, film) => {
-      if (film.characters.includes(film.characterUrl)) {
+      if (film.characters.includes(characterUrl)) {
         acc++;
       }
       return acc;
