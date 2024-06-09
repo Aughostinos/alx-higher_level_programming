@@ -6,20 +6,26 @@
 const request = require('request');
 const apiUrl = process.argv[2];
 
-
-request.get(apiUrl, (error, response, body) => {
+request(apiUrl, (error, response, body) => {
   if (error) {
-    console.error(error);
-  } else if (response.statusCode === 200) {
-    const films = JSON.parse(body).results;
-    const count = films.reduce((acc, film) => {
-      if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/18/`)) {
-        acc++;
-      }
-      return acc;
-    }, 0);
-    console.log(count);
-  } else {
-    console.log(`Error: ${response.statusCode}`);
+    console.error('Error:', error);
+    return;
   }
+
+  if (response.statusCode !== 200) {
+    console.error('Failed to retrieve data. Status code:', response.statusCode);
+    return;
+  }
+
+  const data = JSON.parse(body);
+  const films = data.results;
+  let count = 0;
+
+  films.forEach(film => {
+    if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${wedgeAntillesId}/`)) {
+      count++;
+    }
+  });
+
+  console.log(count);
 });
