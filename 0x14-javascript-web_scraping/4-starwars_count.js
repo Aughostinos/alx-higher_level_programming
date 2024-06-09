@@ -14,11 +14,11 @@ request.get(apiUrl, (error, response, body) => {
   } else if (response.statusCode === 200) {
     const films = JSON.parse(body).results;
     const count = films.reduce((acc, film) => {
-      if (film.characters.includes(characterUrl)){
-        acc ++;
+      if (film.characters.includes(characterUrl)) {
+        acc++;
       }
       return acc;
-    },0);
+    }, 0);
     console.log(count);
   }
 });
