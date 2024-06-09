@@ -5,28 +5,19 @@
 
 const request = require('request');
 const apiUrl = process.argv[2];
-const characterId = 18;
-const characterUrl = `https://swapi-api.alx-tools.com/api/people/${characterId}/`;
+
 
 request.get(apiUrl, (error, response, body) => {
   if (error) {
     console.error(error);
   } else if (response.statusCode === 200) {
-    let films;
-    try {
-      films = JSON.parse(body).results;
-    } catch (parseError) {
-      console.error('Parsing Error:', parseError);
-      return;
-    }
-
+    const films = JSON.parse(body).results;
     const count = films.reduce((acc, film) => {
-      if (film.characters.includes(characterUrl)) {
+      if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/18/`)) {
         acc++;
       }
       return acc;
     }, 0);
-    
     console.log(count);
   } else {
     console.log(`Error: ${response.statusCode}`);
