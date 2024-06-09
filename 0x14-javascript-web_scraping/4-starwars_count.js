@@ -12,7 +12,13 @@ request.get(apiUrl, (error, response, body) => {
   if (error) {
     console.error(error);
   } else if (response.statusCode === 200) {
-    const films = JSON.parse(body).results;
+    let films;
+    try {
+      JSON.parse(body).results;
+    } catch (parseError) {
+      console.error('parsing Error:', parseError);
+      return;
+    }
     const count = films.reduce((acc, film) => {
       if (film.characters.includes(characterUrl)) {
         acc++;
