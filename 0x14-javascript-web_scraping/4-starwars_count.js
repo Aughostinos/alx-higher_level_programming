@@ -23,7 +23,7 @@ request(apiUrl, (error, response, body) => {
   let count = 0;
 
   films.forEach(film => {
-    if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterUrl}/`)) {
+    if (film.characters.includes(`/${characterUrl}/`)) {
       count++;
     }
   });
