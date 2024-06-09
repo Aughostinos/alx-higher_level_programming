@@ -12,14 +12,13 @@ request.get(apiUrl, (error, response, body) => {
     console.error(error);
   } else if (response.statusCode === 200) {
     const films = JSON.parse(body).results;
-    const count = films.reduce((acc, film) => {
-      if (film.characters.includes(`/people/18/`)) {
-        acc++;
+    let count = 0;
+    films.forEach(film => {
+      if (film.characters.includes(wedgeAntillesUrl)) {
+        count++;
       }
-      return acc;
-    }, 0);
+    });
+  
     console.log(count);
-  } else {
-    console.log(`Error: ${response.statusCode}`);
   }
-});
+  });
