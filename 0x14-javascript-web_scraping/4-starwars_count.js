@@ -5,28 +5,21 @@
 
 const request = require('request');
 const apiUrl = process.argv[2];
-const characterUrl = '18';
 
-request(apiUrl, (error, response, body) => {
+
+request.get(apiUrl, (error, response, body) => {
   if (error) {
-    console.error('Error:', error);
-    return;
+    console.error(error);
+  } else if (response.statusCode === 200) {
+    const films = JSON.parse(body).results;
+    const count = films.reduce((acc, film) => {
+      if (film.characters.includes(`/people/18/`)) {
+        acc++;
+      }
+      return acc;
+    }, 0);
+    console.log(count);
+  } else {
+    console.log(`Error: ${response.statusCode}`);
   }
-
-  if (response.statusCode !== 200) {
-    console.error('Failed to retrieve data. Status code:', response.statusCode);
-    return;
-  }
-
-  const data = JSON.parse(body);
-  const films = data.results;
-  let count = 0;
-
-  films.forEach(film => {
-    if (film.characters.includes(`/${characterUrl}/`)) {
-      count++;
-    }
-  });
-
-  console.log(count);
 });
