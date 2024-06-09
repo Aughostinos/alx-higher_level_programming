@@ -6,7 +6,7 @@
 const request = require('request');
 const apiUrl = process.argv[2];
 const characterId = 18;
-const characterUrl = `https://swapi-api.alx-tools.com/api/people/${characterId}/`;
+const characterUrl = `http://swapi.co/api/people/${characterId}/`;
 
 request.get(apiUrl, (error, response, body) => {
   if (error) {
