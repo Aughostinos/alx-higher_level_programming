@@ -1,6 +1,6 @@
 #!/usr/bin/node
 /**
- * This script prints the number of movies where the character "Wedge Antilles" is present.
+ * This script computes the number of tasks completed by user id.
  */
 
 const request = require('request');
@@ -13,21 +13,21 @@ request(apiUrl, (error, response, body) => {
   }
 
   if (response.statusCode !== 200) {
-    console.error(error);
+    console.error('Error:', response.statusCode);
     return;
   }
 
-  const todos = JSON.parse(body).results;
-  const completedTask = {};
+  const todos = JSON.parse(body);
+  const completedTasks = {};
 
   todos.forEach((todo) => {
     if (todo.completed) {
-      if(completedTask[todo.userId]) {
-        completedTask[todo.userId]++;
+      if (completedTasks[todo.userId]) {
+        completedTasks[todo.userId]++;
       } else {
-        completedTask[todo.userId] = 1;
+        completedTasks[todo.userId] = 1;
       }
     }
   });
-  console.log(completedTask);
+  console.log(completedTasks);
 });
