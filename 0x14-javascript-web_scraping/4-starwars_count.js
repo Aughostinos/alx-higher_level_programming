@@ -5,7 +5,6 @@
 
 const request = require('request');
 const apiUrl = process.argv[2];
-const wedgeAntillesUrl = 'https://swapi-api.alx-tools.com/api/people/18/';
 
 request(apiUrl, (error, response, body) => {
   if (error) {
@@ -14,7 +13,7 @@ request(apiUrl, (error, response, body) => {
   }
 
   if (response.statusCode !== 200) {
-    console.error('Failed to retrieve data. Status code:', response.statusCode);
+    console.error(error);
     return;
   }
 
@@ -22,9 +21,11 @@ request(apiUrl, (error, response, body) => {
   let count = 0;
 
   films.forEach(film => {
-    if (film.characters.includes(wedgeAntillesUrl)) {
-      count++;
-    }
+    film.characters.forEach((character) => {
+      if (character.includes(18)) {
+        count++;
+      }
+    });
   });
 
   console.log(count);
